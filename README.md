@@ -1,1 +1,144 @@
 # surprise-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyeux Anniversaire Kaka Nini ❤️</title>
+  <style>
+    body {
+      background-color: #fce4ec;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #d81b60;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* Animation de l'enveloppe */
+    .envelope {
+      width: 180px;
+      height: 120px;
+      background-color: #e91e63;
+      border-radius: 8px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      border-left: 90px solid transparent;
+      border-right: 90px solid transparent;
+      border-top: 60px solid #c2185b;
+    }
+
+    .heart-btn {
+      font-size: 35px;
+      z-index: 2;
+    }
+
+    /* Conteneur des cartes de messages */
+    .messages-container {
+      display: none;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+      border-left: 5px solid #d81b60;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .next-btn {
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="intro">
+    <h1>Joyeux Anniversaire mon Kaka Nini ! 🥳🎉</h1>
+    <p style="color: #888;">Touche l'enveloppe pour ouvrir ta lettre...</p>
+    <div class="envelope" onclick="ouvrirLettre()">
+      <div class="heart-btn">💌</div>
+    </div>
+  </div>
+
+  <div class="messages-container" id="messagesContainer">
+    
+    <div class="card" id="msg1">
+      <h3>Message 1 ❤️</h3>
+      <p>Joyeux anniversaire à mon homme exceptionnel, mon Kaka Nini ! Que cette journée du 29 septembre t'apporte autant de bonheur et de joie que tu m'en donnes chaque jour.</p>
+      <button class="next-btn" onclick="montrerMessage(2)">Message suivant ✨</button>
+    </div>
+
+    <div class="card" id="msg2" style="display: none;">
+      <h3>Message 2 🌹</h3>
+      <p>Merci d'être toujours là pour moi, avec ton sourire et ta gentillesse. Je remercie le ciel de t'avoir mis sur mon chemin. Tu es une vraie bénédiction dans ma vie.</p>
+      <button class="next-btn" onclick="montrerMessage(3)">Dernier message 🎁</button>
+    </div>
+
+    <div class="card" id="msg3" style="display: none;">
+      <h3>Message 3 💖</h3>
+      <p>Pour cette nouvelle année de ta vie, je te souhaite tout le succès, la santé, la paix et la réussite dans tous tes projets. Je t'aime fort ! 💕</p>
+    </div>
+
+  </div>
+
+  <script>
+    function ouvrirLettre() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('messagesContainer').style.display = 'block';
+    }
+
+    function montrerMessage(num) {
+      if (num === 2) {
+        document.getElementById('msg2').style.display = 'block';
+      } else if (num === 3) {
+        document.getElementById('msg3').style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
